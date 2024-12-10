@@ -81,8 +81,8 @@ test.describe('Sauce Demo Tests', () => {
     await expect(backpackItem).toBeVisible();
 
     await page.locator('#checkout').click();
-    await page.locator('#first-name').fill('Viktor');
-    await page.locator('#last-name').fill('Talis');
+    await page.locator('#first-name').fill('John');
+    await page.locator('#last-name').fill('Dou');
     await page.locator('#postal-code').fill('12345');
     await page.locator('#continue').click();
 
@@ -115,8 +115,8 @@ test.describe('Sauce Demo Tests', () => {
     await expect(bikeLightItem).toBeVisible();
 
     await page.locator('#checkout').click();
-    await page.locator('#first-name').fill('Jayce');
-    await page.locator('#last-name').fill('Talis');
+    await page.locator('#first-name').fill('John');
+    await page.locator('#last-name').fill('Dou');
     await page.locator('#postal-code').fill('12345');
     await page.locator('#continue').click();
 
@@ -131,8 +131,8 @@ test.describe('Sauce Demo Tests', () => {
   // Test Case 7: Verify Non-Existing User Is not Able to Login
   test('Verify Non-Existing User Is not Able to Login', async ({ page }) => {
     await page.goto('https://www.saucedemo.com/');
-    await page.locator('[data-test="username"]').fill('standard_user1');
-    await page.locator('[data-test="password"]').fill('secret');
+    await page.locator('[data-test="username"]').fill('standard_user_123');
+    await page.locator('[data-test="password"]').fill('secret_sauce_123');
     await page.locator('[data-test="login-button"]').click();
 
     const errorMessage = page.locator('[data-test="error"]');
